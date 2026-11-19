@@ -1,10 +1,28 @@
-# Exercício de Testes Unitários
+# Expo-CI-CD
 
-## Objetivo
+## CI/CD com EAS Workflows
+
+O workflow `.eas/workflows/pipeline.yml` é disparado a cada push na branch `main`, quando o repositório está conectado ao projeto Expo.
+
+1. Instala as dependências com base no arquivo de lock.
+2. Executa `npm test -- --ci --runInBand`, sem modo de observação.
+3. Se os testes passarem, gera um build Android com o perfil `production`, em formato AAB.
+
+As execuções e os artefatos podem ser acompanhados em **Workflows** no painel do Expo. O build iOS será configurado posteriormente.
+
+Para validar a configuração localmente:
+
+```bash
+npx eas-cli@latest workflow:validate .eas/workflows/pipeline.yml
+```
+
+## Exercício de Testes Unitários
+
+### Objetivo
 
 Este exercício tem como objetivo consolidar conhecimentos sobre testes unitários. Ele está dividido em duas partes principais:
 
-## Parte 1: Fazer todos os testes funcionarem
+### Parte 1: Fazer todos os testes funcionarem
 
 Nesta primeira etapa, você deve:
 
@@ -16,7 +34,7 @@ Nesta primeira etapa, você deve:
 
 **Objetivo alcançado quando:** Todos os testes passarem sem erros.
 
-## Parte 2: Alcançar 100% de cobertura de testes
+### Parte 2: Alcançar 100% de cobertura de testes
 
 Nesta segunda etapa, você deve:
 
